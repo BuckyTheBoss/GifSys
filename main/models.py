@@ -7,9 +7,12 @@ class Gif(models.Model):
     url = models.URLField()
     uploader_name = models.CharField(max_length=50)
     created_at = models.DateTimeField(auto_now_add=True)
+    # added for daily challenge likes
+    likes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50)

@@ -46,3 +46,19 @@ def homepage(request):
         'page_heading': 'Our GIF\'s'
     }
     return render(request, 'show_gifs.html', context)
+
+
+def like_gif(request, id, mode):
+    gif = get_object_or_404(Gif, pk=id)
+    gif.likes += 1 if mode else -1
+    gif.save()
+    return redirect('view_gif', gif.id)
+
+
+def view_gifs_by_like(request):
+    context = {
+        'gif_list': Gif.objects.filter(likes__gte=1).order_by('likes'),
+        'page_title': 'Trending',
+        'page_heading': 'Not hated GIF\'s'
+    }
+    return render(request, 'show_gifs.html', context)

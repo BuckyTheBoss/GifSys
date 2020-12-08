@@ -10,6 +10,11 @@
     <li class="list-group-item">{{gif.title}}</li>
     <li class="list-group-item">User: {{gif.uploader_name}}</li>
     <li class="list-group-item">created {{ gif.created_at | timesince }} ago</li>
+      <li class="list-group-item">Likes: {{gif.likes}}</li>
   </ul>
+<div class="card-body">
+    <a href="{% url 'like_gif' gif.id 1 %}" class="card-link btn btn-success">Like</a>
+    <a href="{% url 'like_gif' gif.id 0 %}" class="card-link btn btn-danger">Dislike</a>
+  </div>
 </div>
 {% endblock %}

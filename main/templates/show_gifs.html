@@ -9,10 +9,12 @@
             <div class="col-3">
                 <div class="card">
                     <img src="{{gif.url}}" class="card-img-top" alt="{{gif.title}}">
-
-                     <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Likes: {{gif.likes}}</li>
+                    </ul>
+                    <div class="card-body">
                         <a href="{% url 'view_gif' gif.id %}" class="card-link">See GIF details</a>
-                      </div>
+                    </div>
                 </div>
             </div>
         {% endfor %}
