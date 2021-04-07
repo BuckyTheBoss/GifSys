@@ -38,11 +38,13 @@ coverage.xml
 # Django stuff:
 *.log
 *.pot
+giphyclone/local_settings.py
 # Sphinx documentation
 docs/_build/
 # Database
 db.sqlite3
 venv/
+env/
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
